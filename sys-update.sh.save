@@ -1,0 +1,25 @@
+#!/bin/bash
+
+update() {
+
+os_name=
+
+
+
+
+apt-get update;
+
+apt-get upgrade -y;
+
+    
+if [ $? -ne 0 ]; then
+    echo "Error al actualziar el sistema"
+else 
+    apt-get autoclean;
+    apt-get clean;
+    apt-get autoremove -y
+    echo "El sistema de ha actualzado exitosamente "        
+fi
+}
+
+update
